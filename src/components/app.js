@@ -4,6 +4,8 @@ import superagent from 'superagent';
 import SearchForm from './search-form';
 import SearchResultList from './search-result-list';
 
+import '../style/app.scss';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -39,11 +41,11 @@ export default class App extends Component {
       
   }
 
-  //try nd move this into search result list  DANGER
+  //try and move this into search result list  DANGER
   handleTopicsRender() {
     return this.state.topics.map((topic, index) => (
       <div key={index}>
-        <a target="blank" href={topic.data.url}>{topic.data.url}<p>Up Votes: {topic.data.ups}</p></a>
+        <a target="blank" href={topic.data.url}>{topic.data.title}<p>Up Votes: {topic.data.ups}</p></a>
       </div>
     ));
   }

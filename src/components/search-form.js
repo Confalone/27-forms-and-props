@@ -1,5 +1,7 @@
 import React, {Component, Fragment} from 'react';
 
+import '../style/app.scss';
+
 
 export default class SeachForm extends Component {
   
