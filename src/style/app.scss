@@ -21,8 +21,13 @@ button {
 input {
   color: $color-theme;
   font-size: 16px;
+  border: red
 }
 
 .invalid{
   border:1px solid #ff0000
+  }
+
+.error{
+    border: red
   }
