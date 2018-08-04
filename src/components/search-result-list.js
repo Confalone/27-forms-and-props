@@ -5,9 +5,9 @@ export default class SearchResultList extends Component {
   render() {
     const {renderResults} = this.props;
     return(
-      <Fragment>
+      <ul>
         {renderResults()}
-      </Fragment>
+      </ul>
     );
   }
 }
