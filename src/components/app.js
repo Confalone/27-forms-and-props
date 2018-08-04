@@ -55,14 +55,17 @@ export default class App extends Component {
     return (
       <Fragment>
         <h1>What is cracking?</h1>
-        <SearchForm 
-          topicChange={this.handleTopicChange}
-          limitChange={this.handleLimitChange}
-          handleSubmit={this.handleRedditSubmit}
-        />
-        <SearchResultList
-          renderResults={this.handleTopicsRender}
-        />
+        <ul>
+          <SearchForm 
+            topicChange={this.handleTopicChange}
+            limitChange={this.handleLimitChange}
+            handleSubmit={this.handleRedditSubmit}
+          />
+          <SearchResultList
+        
+            renderResults={this.handleTopicsRender}
+          />
+        </ul>
       </Fragment>
     );
   }
