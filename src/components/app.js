@@ -44,9 +44,9 @@ export default class App extends Component {
   //try and move this into search result list  DANGER
   handleTopicsRender() {
     return this.state.topics.map((topic, index) => (
-      <div key={index}>
+      <li key={index}>
         <a target="blank" href={topic.data.url}>{topic.data.title}<p>Up Votes: {topic.data.ups}</p></a>
-      </div>
+      </li>
     ));
   }
 
@@ -55,17 +55,15 @@ export default class App extends Component {
     return (
       <Fragment>
         <h1>What is cracking?</h1>
-        <ul>
-          <SearchForm 
-            topicChange={this.handleTopicChange}
-            limitChange={this.handleLimitChange}
-            handleSubmit={this.handleRedditSubmit}
-          />
-          <SearchResultList
+        <SearchForm 
+          topicChange={this.handleTopicChange}
+          limitChange={this.handleLimitChange}
+          handleSubmit={this.handleRedditSubmit}
+        />
+        <SearchResultList
         
-            renderResults={this.handleTopicsRender}
-          />
-        </ul>
+          renderResults={this.handleTopicsRender}
+        />
       </Fragment>
     );
   }
