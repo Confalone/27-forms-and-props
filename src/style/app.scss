@@ -1,0 +1,28 @@
+$color-theme: black;
+$color-scheme: yellow;
+$color-dream: purple;
+$color-button:light-grey;
+
+body {
+  background-color: $color-scheme;
+  color: $color-theme;
+}
+
+button {
+  background-color: $color-button;
+  padding: 7px 20px;
+  margin-right: 5px;
+
+  &:hover {
+    background-color: $color-dream
+  }
+}
+
+input {
+  color: $color-theme;
+  font-size: 16px;
+}
+
+.invalid{
+  border:1px solid #ff0000
+  }
