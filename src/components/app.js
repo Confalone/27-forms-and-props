@@ -13,6 +13,7 @@ export default class App extends Component {
       topics: [],
       input: '',
       limit: '',
+      error: false,
     };
     this.handleTopicChange = this.handleTopicChange.bind(this);
     this.handleLimitChange = this.handleLimitChange.bind(this);
@@ -32,13 +33,18 @@ export default class App extends Component {
     event.preventDefault();
     superagent.get(`https://www.reddit.com/r/${this.state.input}.json?limit=${this.state.limit}`)
       .then(response => {
-        this.setState({topics: response.body.data.children});
+        this.setState({
+          topics: response.body.data.children,
+          error:false,
+        });
         this.handleTopicsRender();
       })
       .catch(error => {
-        this.setState({topics: []});
+        this.setState({
+          topics: [],
+          error: true,
+        });
       });
-      
   }
 
   //try and move this into search result list  DANGER
@@ -59,6 +65,7 @@ export default class App extends Component {
           topicChange={this.handleTopicChange}
           limitChange={this.handleLimitChange}
           handleSubmit={this.handleRedditSubmit}
+          errorHandle={this.state.error}
         />
         <SearchResultList
         
